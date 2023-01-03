@@ -29,6 +29,8 @@
       background-color: white;
       border-radius: 20px;
       display: flex;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 
   .left {
@@ -66,6 +68,7 @@
       left: -100px;
       z-index: 3;
       width: 180px;
+      content: url('./images/illustration-box-desktop.svg');
   }
 
   .right {
@@ -154,7 +157,7 @@
 
   @media (max-width:930px) {
       body {
-          height: 1100px;
+          height: 1000px;
           min-width: 300px;
       }
 
@@ -184,7 +187,7 @@
           left: 50px;
           top: 0px;
           width: 300px;
-          content: url("/images/bg-pattern-mobile.svg");
+          content: url("./images/bg-pattern-mobile.svg");
       }
 
       .box {
@@ -216,7 +219,6 @@
 
       .accordion .label {
           font-size: 16px;
-
       }
 
       .accordion .content {
@@ -231,7 +233,7 @@
 
   @media (max-width:430px) {
       body {
-          height: 800px;
+          height: 700px;
           width: 300px;
           margin: 0 auto;
       }
@@ -252,7 +254,6 @@
           left: 30px;
           width: 240px;
       }
-
 
       h1 {
           margin-top: 95px;

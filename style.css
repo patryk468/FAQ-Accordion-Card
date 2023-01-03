@@ -1,271 +1,260 @@
-  .attribution {
-      font-size: 11px;
-      text-align: center;
-  }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-  .attribution a {
-      color: hsl(228, 45%, 44%);
-  }
+body {
+    min-height: 100vh;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 930px;
+}
 
+.wrapper {
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
-  * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-  }
+.left {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+}
 
-  body {
-      min-height: 100vh;
-      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 930px;
-  }
+.hide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
-  .wrapper {
-      width: 800px;
-      height: 400px;
-      background-color: white;
-      border-radius: 20px;
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-          rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
+.image {
+    position: absolute;
+    left: -70px;
+    top: 40px;
+    width: 400px;
+    z-index: 1;
+}
 
-  .left {
-      width: 50%;
-      height: 100%;
-      position: relative;
-      border-radius: 20px;
-  }
+.shadow {
+    position: absolute;
+    left: -370px;
+    top: -200px;
+    width: 700px;
+}
 
-  .hide {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-  }
+.box {
+    position: absolute;
+    top: 150px;
+    left: -100px;
+    z-index: 3;
+    width: 180px;
+    content: url('./images/illustration-box-desktop.svg');
+}
 
-  .image {
-      position: absolute;
-      left: -70px;
-      top: 40px;
-      width: 400px;
-      z-index: 1;
-  }
+.right {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
 
-  .shadow {
-      position: absolute;
-      left: -370px;
-      top: -200px;
-      width: 700px;
-  }
+h1 {
+    padding: 10px 0 10px 0;
+}
 
-  .box {
-      position: absolute;
-      top: 150px;
-      left: -100px;
-      z-index: 3;
-      width: 180px;
-      content: url('./images/illustration-box-desktop.svg');
-  }
+.accordion {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 400px;
+    height: 100%;
+    padding: 0px 20px 0px 0px;
+    font-size: 14px;
+    font-family: 'Kumbh Sans',
+        sans-serif;
+}
 
-  .right {
-      width: 50%;
-      height: 100%;
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-  }
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid gray;
+}
 
-  h1 {
-      padding: 10px 0 10px 0;
-  }
+.accordion .label {
+    position: relative;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+}
 
-  .accordion {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      width: 400px;
-      height: 100%;
-      padding: 0px 20px 0px 0px;
-      font-size: 14px;
-      font-family: 'Kumbh Sans',
-          sans-serif;
-  }
+.accordion .container {
+    position: relative;
+    margin: 8px 8px;
+    font-size: 10px;
+    width: 95%;
+    padding: 5px 0;
+}
 
-  hr {
-      width: 100%;
-      border: none;
-      border-top: 1px solid gray;
-  }
+.accordion .container.active .label {
+    font-weight: bold;
+}
 
-  .accordion .label {
-      position: relative;
-      font-size: 12px;
-      color: black;
-      cursor: pointer;
-  }
+.accordion .content {
+    position: relative;
+    width: 100%;
+    max-height: 0;
+    font-size: 10px;
+    text-align: justify;
+    overflow: hidden;
+    transition: 0.5s;
+}
 
-  .accordion .container {
-      position: relative;
-      margin: 8px 8px;
-      font-size: 10px;
-      width: 95%;
-      padding: 5px 0;
-  }
+.accordion .container.active .content {
+    max-height: 50px;
+}
 
-  .accordion .container.active .label {
-      font-weight: bold;
-  }
+.accordion .label::before {
+    content: '^';
+    color: orange;
+    font-weight: bold;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 15px;
+    transform: translate(-15px) rotate(180deg);
+}
 
-  .accordion .content {
-      position: relative;
-      width: 100%;
-      max-height: 0;
-      font-size: 10px;
-      text-align: justify;
-      overflow: hidden;
-      transition: 0.5s;
-  }
+.accordion .container.active .label::before {
+    transform: translateY(-15px) rotate(0deg);
+    top: 10px;
+    right: 5px;
+}
 
-  .accordion .container.active .content {
-      max-height: 50px;
-  }
+@media (max-width:930px) {
+    body {
+        height: 1000px;
+        min-width: 300px;
+    }
 
-  .accordion .label::before {
-      content: '^';
-      color: orange;
-      font-weight: bold;
-      position: absolute;
-      top: -5px;
-      right: -10px;
-      font-size: 15px;
-      transform: translate(-15px) rotate(180deg);
-  }
+    .wrapper {
+        max-width: 400px;
+        height: auto;
+        flex-direction: column;
+    }
 
-  .accordion .container.active .label::before {
-      transform: translateY(-15px) rotate(0deg);
-      top: 10px;
-      right: 5px;
-  }
+    .left {
+        width: 100%;
+        height: 20%;
+    }
 
-  @media (max-width:930px) {
-      body {
-          height: 1000px;
-          min-width: 300px;
-      }
+    .hide {
+        overflow: visible;
+    }
 
-      .wrapper {
-          max-width: 400px;
-          height: auto;
-          flex-direction: column;
-      }
+    .image {
+        left: 50px;
+        top: -135px;
+        width: 300px;
+        content: url("./images/illustration-woman-online-mobile.svg");
+    }
 
-      .left {
-          width: 100%;
-          height: 20%;
-      }
+    .shadow {
+        left: 50px;
+        top: 0px;
+        width: 300px;
+        content: url("./images/bg-pattern-mobile.svg");
+    }
 
-      .hide {
-          overflow: visible;
-      }
+    .box {
+        content: url('');
+    }
 
-      .image {
-          left: 50px;
-          top: -135px;
-          width: 300px;
-          content: url("./images/illustration-woman-online-mobile.svg");
-      }
+    .right {
+        width: 100%;
+        height: auto;
+    }
 
-      .shadow {
-          left: 50px;
-          top: 0px;
-          width: 300px;
-          content: url("./images/bg-pattern-mobile.svg");
-      }
+    h1 {
+        margin-top: 120px;
+        font-size: 36px;
+        padding: 10px 0;
+    }
 
-      .box {
-          content: url('');
-      }
+    .accordion {
+        align-items: center;
+        padding: 20px;
+        height: auto;
+    }
 
-      .right {
-          width: 100%;
-          height: auto;
-      }
+    hr {
+        width: 100%;
+        border: none;
+        border-top: 1px solid black;
+    }
 
-      h1 {
-          margin-top: 120px;
-          font-size: 36px;
-          padding: 10px 0;
-      }
+    .accordion .label {
+        font-size: 16px;
+    }
 
-      .accordion {
-          align-items: center;
-          padding: 20px;
-          height: auto;
-      }
+    .accordion .content {
+        font-size: 14px;
+    }
 
-      hr {
-          width: 100%;
-          border: none;
-          border-top: 1px solid black;
-      }
+    .accordion .label::before {
+        font-size: 20px;
+    }
+}
 
-      .accordion .label {
-          font-size: 16px;
-      }
+@media (max-width:430px) {
+    body {
+        height: 700px;
+        width: 300px;
+        margin: 0 auto;
+    }
 
-      .accordion .content {
-          font-size: 14px;
-      }
+    .wrapper {
+        width: 350px;
+        height: auto;
+        flex-direction: column;
+    }
 
-      .accordion .label::before {
-          font-size: 20px;
-      }
+    .image {
+        left: 30px;
+        top: -105px;
+        width: 240px;
+    }
 
-  }
+    .shadow {
+        left: 30px;
+        width: 240px;
+    }
 
-  @media (max-width:430px) {
-      body {
-          height: 700px;
-          width: 300px;
-          margin: 0 auto;
-      }
+    h1 {
+        margin-top: 95px;
+        font-size: 24px;
+    }
 
-      .wrapper {
-          width: 350px;
-          height: auto;
-          flex-direction: column;
-      }
+    .accordion {
+        width: 300px;
+    }
 
-      .image {
-          left: 30px;
-          top: -105px;
-          width: 240px;
-      }
+    .accordion .label {
+        font-size: 12px;
+    }
 
-      .shadow {
-          left: 30px;
-          width: 240px;
-      }
-
-      h1 {
-          margin-top: 95px;
-          font-size: 24px;
-      }
-
-      .accordion {
-          width: 300px;
-      }
-
-      .accordion .label {
-          font-size: 12px;
-      }
-
-      .accordion .content {
-          font-size: 10px;
-      }
-  }
+    .accordion .content {
+        font-size: 10px;
+    }
+}

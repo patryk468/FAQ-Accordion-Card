@@ -184,7 +184,7 @@
           left: 50px;
           top: 0px;
           width: 300px;
-          content: url("/images/bg-pattern-mobile.svg");
+          content: url("./images/bg-pattern-mobile.svg");
       }
 
       .box {

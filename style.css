@@ -99,7 +99,7 @@
   hr {
       width: 100%;
       border: none;
-      border-top: 1px solid black;
+      border-top: 1px solid gray;
   }
 
   .accordion .label {
@@ -140,19 +140,16 @@
       color: orange;
       font-weight: bold;
       position: absolute;
-      top: 50%;
-      right: 5px;
+      top: -5px;
+      right: -10px;
       font-size: 15px;
-      transform: translateY(-50%);
+      transform: translate(-15px) rotate(180deg);
   }
 
   .accordion .container.active .label::before {
-      content: '^';
-      font-weight: bold;
-      color: orange;
-      rotate: 180deg;
+      transform: translateY(-15px) rotate(0deg);
+      top: 10px;
       right: 5px;
-      bottom: 10px;
   }
 
   @media (max-width:930px) {
